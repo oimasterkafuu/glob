@@ -1,16 +1,26 @@
 <template>
-    <div v-html="parsedContent"></div>
+    <div v-html="parsedContent" v-if="content.trim() !== ''"></div>
+    <div class="ui fluid placeholder" v-else>
+        <div class="header">
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="paragraph" v-for="i in 10">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
     name: 'Marker',
-    data() {
-        return {
-            content: this.$slots.default()[0].children
-        };
-    },
     props: {
+        content: {
+            type: String,
+            default: ''
+        },
         safe: {
             type: Boolean,
             default: false
