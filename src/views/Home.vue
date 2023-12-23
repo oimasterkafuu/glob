@@ -66,11 +66,23 @@ print("Hello, world!")
 |---|---|---|
 | 内容 | 内容 | 内容 |
 | 内容 | 内容 | 内容 |
+
+## 公式
+
+$$ e^{i\\pi} + 1 = 0 $$
+$ 1 + 2 = 3 $ 是一道简单的算术题。
 `
         };
     },
     mounted() {
         $('#content').html(marked.parse(this.content));
+        
+        renderMathInElement($('#content')[0], {
+            delimiters: [
+                { left: '$$', right: '$$', display: true },
+                { left: '$', right: '$', display: false }
+            ]
+        });
     }
 };
 </script>
