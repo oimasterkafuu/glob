@@ -14,7 +14,6 @@ export default {
         fetch('/Home.md')
             .then((res) => res.text())
             .then((res) => {
-                console.log(res);
                 this.content = res;
             });
     }

@@ -18,4 +18,6 @@ AV.init({
     serverURL: 'https://dbwojbzt.lc-cn-n1-shared.com'
 });
 
+console.log('%cMade by oimaster with ❤️', 'color: #8db3f1; font-size: 2em; font-weight: bold;');
+
 app.mount('#app');
