@@ -32,6 +32,10 @@
         display: none !important;
     }
 }
+
+:root {
+    --body-full-height: calc(100vh - 60px);
+}
 </style>
 
 <style scoped>
