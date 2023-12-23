@@ -7,7 +7,12 @@
                 ， 构建于 <a> {{ appBuildTime }}</a>
             </span>
 
-            <span class="right">© 2023 oimasterkafuu</span>
+            <span class="right"
+                >© 2023
+                <a href="https://github.com/oimasterkafuu" target="_blank" rel="noopener noreferrer"
+                    >oimasterkafuu</a
+                ></span
+            >
         </div>
     </div>
 </template>
