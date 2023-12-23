@@ -13,3 +13,9 @@ import router from './router';
 const app = createApp(App);
 app.use(router);
 app.mount('#app');
+
+AV.init({
+    appId: 'dbwOjBZTDzOGVCMstogd2SE4-gzGzoHsz',
+    appKey: 'GiSZzeRV8LhGhRkubFYYjiRO',
+    serverURL: 'https://dbwojbzt.lc-cn-n1-shared.com'
+});
