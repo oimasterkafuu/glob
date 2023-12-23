@@ -4,8 +4,13 @@
 
 <script>
 export default {
+    name: 'Marker',
+    data() {
+        return {
+            content: this.$slots.default()[0].children
+        };
+    },
     props: {
-        content: String,
         safe: {
             type: Boolean,
             default: false

@@ -1,5 +1,5 @@
 <template>
-    <Marker :content="content" safe="true"></Marker>
+    <Marker safe="true">{{ content }}</Marker>
 </template>
 
 <script>
