@@ -13,7 +13,6 @@
 </template>
 
 <script setup>
-import moment from 'moment';
 const appVersion = __APP_VERSION__;
 const appBuildTime = __APP_BUILD_TIME__;
 </script>
