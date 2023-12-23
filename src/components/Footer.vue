@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .ui.segment {
     position: fixed;
     height: 49px;
