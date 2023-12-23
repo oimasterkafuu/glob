@@ -1,5 +1,5 @@
 <template>
-    <div id="content"></div>
+    <Marker :content="content" safe="true"></Marker>
 </template>
 
 <script>
@@ -76,55 +76,6 @@ $$ e^{i\\pi} + 1 = 0 $$
 $ 1 + 2 = 3 $ 是一道简单的算术题。
 `
         };
-    },
-    mounted() {
-        const renderer = {
-            table: (header, body) => {
-                return (
-                    '<table class="ui unstackable celled table"><thead>' +
-                    header +
-                    '</thead><tbody>' +
-                    body +
-                    '</tbody></table>'
-                );
-            },
-            tablecell: (content, flags) => {
-                var tag = 'td';
-                if (flags.header) {
-                    tag = 'th';
-                }
-                return (
-                    '<' +
-                    tag +
-                    (flags.align && flags.align !== 'left' ? ' class="' + flags.align + ' aligned"' : '') +
-                    '>' +
-                    content +
-                    '</' +
-                    tag +
-                    '>'
-                );
-            },
-            image: (href, title, text) => {
-                return '<div class="ui image"><img src="' + href + '" alt="' + text + '"></div>';
-            },
-            blockquote: (text) => {
-                return '<blockquote class="ui segment">' + text + '</blockquote>';
-            },
-            hr: () => {
-                return '<div class="ui divider"></div>';
-            }
-        };
-
-        marked.use({ renderer });
-
-        $('#content').html(marked.parse(this.content));
-
-        renderMathInElement($('#content')[0], {
-            delimiters: [
-                { left: '$$', right: '$$', display: true },
-                { left: '$', right: '$', display: false }
-            ]
-        });
     }
 };
 </script>
