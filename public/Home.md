@@ -12,4 +12,6 @@
 
 这个博客是我自己~~纯手工打造~~（好像还真是）制作的，没有使用任何已有的方案，例如 [Hexo](https://hexo.io/) 等。这也是为了我的另一个项目——[Idea](https://github.com/oimasterkafuu/idea) 提供技术支持。
 
+这个博客的源代码将会在 [MIT](https://github.com/oimasterkafuu/glob/blob/main/LICENSE) 许可证下开源。
+
 $$ e^{i\pi} + 1 = 0 $$

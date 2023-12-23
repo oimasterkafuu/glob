@@ -4,11 +4,12 @@
             <span class="mobile-hide">
                 版本
                 <a :href="'https://github.com/oimasterkafuu/glob/releases/tag/v' + appVersion"> v{{ appVersion }}</a>
-                ， 构建于 <a> {{ appBuildTime }}</a>
+                ，使用 <a href="https://github.com/oimasterkafuu/glob/blob/main/LICENSE">MIT</a> 协议开源 ，构建于
+                <a> {{ appBuildTime }}</a>
             </span>
 
-            <span class="right"
-                >© 2023
+            <span class="right">
+                © 2023
                 <a href="https://github.com/oimasterkafuu" target="_blank" rel="noopener noreferrer"
                     >oimasterkafuu</a
                 ></span
