@@ -3,9 +3,8 @@ import { createApp } from 'vue';
 const isVueDevMode = import.meta.env.MODE === 'development';
 if (isVueDevMode) {
     localStorage.setItem('debug', 'leancloud*');
+    console.log('Glob is running in development mode');
 }
-
-console.log('isVueDevMode', isVueDevMode);
 
 import App from './App.vue';
 import router from './router';
