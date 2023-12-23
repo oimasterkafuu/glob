@@ -1,5 +1,8 @@
 <template>
-    <RouterView></RouterView>
+    <NavBar></NavBar>
+    <div class="ui container">
+        <RouterView></RouterView>
+    </div>
 </template>
 
 <script>
