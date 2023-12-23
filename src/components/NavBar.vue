@@ -22,8 +22,9 @@
 </template>
 
 <style>
-body {
+#app {
     padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 @media (max-width: 723px) {
@@ -42,12 +43,6 @@ div.ui.top.fixed.borderless.menu {
 div.logo {
     color: black;
     font-size: 1.5em;
-}
-</style>
-
-<style>
-:root {
-    --body-full-height: calc(100vh - 60px);
 }
 </style>
 

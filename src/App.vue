@@ -3,6 +3,7 @@
     <div class="ui container">
         <RouterView></RouterView>
     </div>
+    <Footer></Footer>
 </template>
 
 <script>

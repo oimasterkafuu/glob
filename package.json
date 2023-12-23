@@ -1,6 +1,6 @@
 {
     "name": "glob",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Get Lit, Oimasterkafuu's Blog",
     "main": "index.js",
     "repository": "https://github.com/oimasterkafuu/glob.git",
@@ -13,6 +13,7 @@
         "format": "prettier --write \"**/*.{js,vue,html,css,scss,json,md}\""
     },
     "dependencies": {
+        "moment": "^2.29.4",
         "vue": "^3.3.4",
         "vue-router": "^4.2.5"
     },
