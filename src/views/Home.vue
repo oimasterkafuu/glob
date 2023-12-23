@@ -9,7 +9,7 @@ export default {
         return {
             content: `# Glob
 
-Get Lit, Oimasterkafuu's Blog. 点亮吧，Oimasterkafuu 的博客！
+Get lit, oimasterkafuu's blog. 让 oimasterkafuu 的博客闪闪发亮！
 
 > 这是一个无服务器博客，正在开发中。它使用 Vue 作为前端，Leancloud 作为后端，以及 Vite 作为构建工具。
 
