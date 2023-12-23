@@ -1,9 +1,9 @@
 {
-    "name": "vue-template",
-    "version": "0.0.0",
-    "description": "The vue template that oimasterkafuu is using",
+    "name": "glob",
+    "version": "0.0.1",
+    "description": "Get Lit, Oimasterkafuu's Blog",
     "main": "index.js",
-    "repository": "https://github.com/oimasterkafuu/vue-template.git",
+    "repository": "https://github.com/oimasterkafuu/glob.git",
     "author": "oimasterkafuu <oimasterfake@icloud.com>",
     "license": "MIT",
     "scripts": {
