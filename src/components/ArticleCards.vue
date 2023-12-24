@@ -23,10 +23,9 @@
             </div>
 
             <div class="description">
-                <blockquote class="ui segment">
-                    <div class="article-content">
-                        <Marker :content="article.attributes.content" :safe="true" :max-header="3"></Marker>
-                    </div>
+                <blockquote class="ui segment article-content">
+                    <Marker :content="article.attributes.content" :safe="true" :max-header="3">
+                    </Marker>
                 </blockquote>
             </div>
         </div>
@@ -36,14 +35,18 @@
             <div class="ui placeholder">
                 <div class="line"></div>
             </div>
-            <Marker class="article-content"></Marker>
+            <div class="description">
+                <blockquote class="ui segment article-content">
+                    <Marker></Marker>
+                </blockquote>
+            </div>
         </div>
     </div>
 </template>
 
 <style scoped>
 .article-content {
-    max-height: 100px;
+    max-height: 200px;
     overflow: hidden;
 }
 </style>
@@ -76,7 +79,6 @@ export default {
             query.limit(this.limit);
             query.find().then((articles) => {
                 this.articles = articles;
-                console.log(articles);
             });
         }
     },
