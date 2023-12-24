@@ -85,9 +85,8 @@ export default {
         async getViews(post) {
             const counterQuery = new AV.Query('Counters');
             counterQuery.equalTo('article', post);
-            counterQuery.select([]);
-            const counters = await counterQuery.find();
-            return counters.length;
+            const counters = await counterQuery.count();
+            return counters;
         }
     }
 };

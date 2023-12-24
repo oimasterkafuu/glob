@@ -44,9 +44,8 @@ export default {
 
         const counterQuery = new AV.Query('Counters');
         counterQuery.equalTo('article', post);
-        counterQuery.select([]);
-        const counters = await counterQuery.find();
-        this.views = counters.length;
+        const counters = await counterQuery.count();
+        this.views = counters;
     }
 };
 </script>
