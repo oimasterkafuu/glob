@@ -8,6 +8,11 @@
                 首页
             </RouterLink>
 
+            <RouterLink to="/articles" class="item" :class="{ active: $route.path === '/articles' }">
+                <i class="book icon"></i>
+                文章
+            </RouterLink>
+
             <a
                 href="https://github.com/oimasterkafuu/glob"
                 class="item mobile-hide"

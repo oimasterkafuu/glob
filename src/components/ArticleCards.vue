@@ -1,0 +1,89 @@
+<template>
+    <div class="ui fluid card" v-for="article in articles" :key="article.id" v-if="articles.length > 0">
+        <div class="content">
+            <div class="header">
+                <RouterLink :to="'/post/' + article.id">
+                    {{ article.attributes.title }}
+                </RouterLink>
+            </div>
+            <div class="meta">
+                <i class="icon user"></i>
+                <RouterLink to="/">oimaster</RouterLink>&bull;
+
+                <i class="icon clock"></i>
+                <DateAndTime :time="article.createdAt"></DateAndTime>
+                &bull;
+
+                <i class="icon history"></i>
+                <DateAndTime :time="article.updatedAt"></DateAndTime>
+                &bull;
+
+                <i class="icon eye"></i>
+                {{ getViews(article.id) }}
+            </div>
+
+            <div class="description">
+                <blockquote class="ui segment">
+                    <div class="article-content">
+                        <Marker :content="article.attributes.content" :safe="true" :max-header="3"></Marker>
+                    </div>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <div class="ui fluid card" v-for="i in limit" v-else>
+        <div class="content">
+            <div class="ui placeholder">
+                <div class="line"></div>
+            </div>
+            <Marker class="article-content"></Marker>
+        </div>
+    </div>
+</template>
+
+<style scoped>
+.article-content {
+    max-height: 100px;
+    overflow: hidden;
+}
+</style>
+
+<script>
+import { RouterLink } from 'vue-router';
+
+export default {
+    name: 'ArticleCards',
+    props: {
+        filterArticles: {
+            type: Array
+        },
+        limit: {
+            type: Number,
+            default: 10
+        }
+    },
+    data() {
+        return {
+            articles: []
+        };
+    },
+    mounted() {
+        if (this.filterArticles && this.filterArticles.length > 0) {
+            this.articles = this.filterArticles;
+        } else {
+            const query = new AV.Query('Articles');
+            query.descending('createdAt');
+            query.limit(this.limit);
+            query.find().then((articles) => {
+                this.articles = articles;
+                console.log(articles);
+            });
+        }
+    },
+    methods: {
+        getViews(id) {
+            return 9286641;
+        }
+    }
+};
+</script>
