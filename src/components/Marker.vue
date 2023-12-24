@@ -24,6 +24,10 @@ export default {
         safe: {
             type: Boolean,
             default: false
+        },
+        maxHeader: {
+            type: Number,
+            default: 1
         }
     },
     computed: {
@@ -73,6 +77,13 @@ export default {
                     } else {
                         return $('<div/>').text(text).html();
                     }
+                },
+
+                heading: (text, level) => {
+                    if (level <= this.maxHeader) {
+                        level = this.maxHeader;
+                    }
+                    return '<h' + level + '>' + text + '</h' + level + '>';
                 }
             };
 
