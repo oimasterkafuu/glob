@@ -13,6 +13,11 @@
 
                 <i class="icon eye"></i>
                 {{ views }}
+
+                <span v-if="user">
+                    &bull;
+                    <RouterLink :to="'/admin/editpost/' + id"> <i class="icon edit"></i>编辑 </RouterLink>
+                </span>
             </div>
         </h1>
     </div>
@@ -30,7 +35,8 @@ export default {
             post: {
                 get: () => ''
             },
-            views: 0
+            views: 0,
+            user: AV.User.current()
         };
     },
     async mounted() {

@@ -5,6 +5,10 @@
     <div class="ui top attached tabular menu">
         <a class="item active" data-tab="edit">编辑</a>
         <a class="item" data-tab="preview" id="preview_tab">预览</a>
+
+        <div class="right menu">
+            <RouterLink class="item" :to="'/post/' + $route.params.id" id="back">回到前台</RouterLink>
+        </div>
     </div>
     <div class="ui bottom attached tab segment active" data-tab="edit">
         <div class="ui form">
@@ -19,6 +23,7 @@
                     class="markdown-edit"
                     placeholder="正文"
                     v-model="content"
+                    @input="onInput"
                 ></textarea>
             </div>
         </div>
@@ -62,12 +67,16 @@ export default {
                 });
                 $('#submit').removeClass('loading', 'disabled');
             });
+            $('#back').removeClass('disabled');
         },
         keyDownListener(e) {
             if (e.metaKey && e.key === 's') {
                 e.preventDefault();
                 this.submit();
             }
+        },
+        onInput() {
+            $('#back').addClass('disabled');
         }
     },
     mounted() {
