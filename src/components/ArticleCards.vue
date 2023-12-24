@@ -1,8 +1,8 @@
 <template>
-    <div class="ui fluid card" v-for="article in articles" :key="article.get('id')" v-if="articles.length > 0">
+    <div class="ui fluid card" v-for="article in articles" :key="article.get('objectId')" v-if="articles.length > 0">
         <div class="content">
             <div class="header">
-                <RouterLink :to="'/post/' + article.get('id')">
+                <RouterLink :to="'/post/' + article.get('objectId')">
                     {{ article.get('title') }}
                 </RouterLink>
             </div>
@@ -19,7 +19,7 @@
                 &bull;
 
                 <i class="icon eye"></i>
-                {{ getViews(article.get('id')) }}
+                {{ getViews(article.get('objectId')) }}
             </div>
 
             <div class="description">
