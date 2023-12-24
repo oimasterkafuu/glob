@@ -12,6 +12,11 @@ const routes = [
         component: () => import('../views/Articles.vue')
     },
     {
+        path: '/post/:id',
+        name: 'post',
+        component: () => import('../views/Post.vue')
+    },
+    {
         path: '/admin',
         name: 'admin',
         component: () => {

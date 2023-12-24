@@ -19,7 +19,7 @@
                 &bull;
 
                 <i class="icon eye"></i>
-                {{ getViews(article.get('objectId')) }}
+                {{ article.views }}
             </div>
 
             <div class="description">
@@ -78,12 +78,21 @@ export default {
             query.limit(this.limit);
             query.find().then((articles) => {
                 this.articles = articles;
+
+                // for each article, get the views
+                this.articles.forEach(async (article) => {
+                    article.views = await this.getViews(article);
+                });
             });
         }
     },
     methods: {
-        getViews(id) {
-            return 9286641;
+        async getViews(post) {
+            const counterQuery = new AV.Query('Counters');
+            counterQuery.equalTo('article', post);
+            counterQuery.select([]);
+            const counters = await counterQuery.find();
+            return counters.length;
         }
     }
 };
