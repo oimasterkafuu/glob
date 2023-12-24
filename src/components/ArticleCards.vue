@@ -1,9 +1,9 @@
 <template>
-    <div class="ui fluid card" v-for="article in articles" :key="article.id" v-if="articles.length > 0">
+    <div class="ui fluid card" v-for="article in articles" :key="article.get('id')" v-if="articles.length > 0">
         <div class="content">
             <div class="header">
-                <RouterLink :to="'/post/' + article.id">
-                    {{ article.attributes.title }}
+                <RouterLink :to="'/post/' + article.get('id')">
+                    {{ article.get('title') }}
                 </RouterLink>
             </div>
             <div class="meta">
@@ -11,21 +11,20 @@
                 <RouterLink to="/">oimaster</RouterLink>&bull;
 
                 <i class="icon clock"></i>
-                <DateAndTime :time="article.createdAt"></DateAndTime>
+                <DateAndTime :time="article.get('createdAt')"></DateAndTime>
                 &bull;
 
                 <i class="icon history"></i>
-                <DateAndTime :time="article.updatedAt"></DateAndTime>
+                <DateAndTime :time="article.get('updatedAt')"></DateAndTime>
                 &bull;
 
                 <i class="icon eye"></i>
-                {{ getViews(article.id) }}
+                {{ getViews(article.get('id')) }}
             </div>
 
             <div class="description">
                 <blockquote class="ui segment article-content">
-                    <Marker :content="article.attributes.content" :safe="true" :max-header="3">
-                    </Marker>
+                    <Marker :content="article.get('content')" :safe="true" :max-header="3"> </Marker>
                 </blockquote>
             </div>
         </div>
