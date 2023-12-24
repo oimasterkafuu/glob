@@ -74,7 +74,6 @@ export default {
             query.find().then((articles) => {
                 this.articles = articles;
 
-                // for each article, get the views
                 this.articles.forEach(async (article) => {
                     article.views = await this.getViews(article);
                 });
