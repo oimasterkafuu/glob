@@ -1,21 +1,9 @@
 <template>
-    <Marker :safe="true" :content="content"></Marker>
+    <MarkerUrl url="/Home.md" :safe="true"></MarkerUrl>
 </template>
 
 <script>
 export default {
-    name: 'Home',
-    data() {
-        return {
-            content: ''
-        };
-    },
-    mounted() {
-        fetch('/Home.md')
-            .then((res) => res.text())
-            .then((res) => {
-                this.content = res;
-            });
-    }
+    name: 'Home'
 };
 </script>
