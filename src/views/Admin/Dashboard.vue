@@ -1,0 +1,3 @@
+<template>
+    <Marker></Marker>
+</template>

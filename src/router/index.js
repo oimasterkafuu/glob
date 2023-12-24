@@ -9,7 +9,13 @@ const routes = [
     {
         path: '/admin',
         name: 'admin',
-        component: () => import('../views/Admin/Login.vue')
+        component: () => {
+            if (AV.User.current()) {
+                return import('../views/Admin/Dashboard.vue');
+            } else {
+                return import('../views/Admin/Login.vue');
+            }
+        }
     }
 ];
 

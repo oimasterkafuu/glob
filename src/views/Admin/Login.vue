@@ -46,10 +46,6 @@
 export default {
     name: 'Login',
     mounted() {
-        if (AV.User.current()) {
-            this.$router.go(-1);
-        }
-
         $('#login-form').form({
             fields: {
                 username: {
