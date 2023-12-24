@@ -31,8 +31,10 @@
     </div>
     <div class="ui fluid card" v-for="i in limit" v-else>
         <div class="content">
-            <div class="ui placeholder">
-                <div class="line"></div>
+            <div class="header">
+                <div class="ui placeholder">
+                    <div class="line"></div>
+                </div>
             </div>
             <div class="description">
                 <blockquote class="ui segment article-content">
