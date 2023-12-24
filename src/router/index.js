@@ -26,6 +26,17 @@ const routes = [
                 return import('../views/Admin/Login.vue');
             }
         }
+    },
+    {
+        path: '/admin/editpost/:id',
+        name: 'edit',
+        component: () => {
+            if (AV.User.current()) {
+                return import('../views/Admin/EditArticle.vue');
+            } else {
+                return import('../views/Admin/Login.vue');
+            }
+        }
     }
 ];
 
