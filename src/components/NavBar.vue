@@ -46,7 +46,7 @@
 }
 
 :root {
-    --body-full-height: calc(100vh - 60px);
+    --body-full-height: calc(100vh - 120px);
 }
 </style>
 
