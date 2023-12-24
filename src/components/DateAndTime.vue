@@ -15,6 +15,9 @@ export default {
     },
     computed: {
         formattedTime() {
+            if (!this.time) {
+                return '刚刚';
+            }
             return moment(this.time).fromNow();
         }
     }
