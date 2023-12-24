@@ -4,9 +4,10 @@
     </div>
     <div class="ui top attached tabular menu">
         <a class="item active" data-tab="edit">编辑</a>
-        <a class="item" data-tab="preview" id="preview_tab">预览</a>
+        <a class="item" data-tab="preview">预览</a>
 
         <div class="right menu">
+            <RouterLink class="item" to="/admin/">到仪表盘</RouterLink>
             <RouterLink class="item" :to="'/post/' + $route.params.id" id="back">回到前台</RouterLink>
         </div>
     </div>

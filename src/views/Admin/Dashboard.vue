@@ -5,33 +5,55 @@
             <div class="column">
                 <div class="ui statistic">
                     <div class="value">
-                        <i class="book icon"></i>
                         {{ articleCount }}
                     </div>
-                    <div class="label">Articles</div>
+                    <div class="label">文章数量</div>
                 </div>
             </div>
             <div class="column">
                 <div class="ui statistic">
                     <div class="value">
-                        <i class="eye icon"></i>
                         {{ viewCount }}
                     </div>
-                    <div class="label">Views</div>
+                    <div class="label">访问总量</div>
                 </div>
             </div>
             <div class="column">
                 <div class="ui statistic">
                     <div class="value">
-                        <i class="comment icon"></i>
                         {{ commentCount }}
                     </div>
-                    <div class="label">Comments</div>
+                    <div class="label">评论数量</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui segment">
+        <div class="ui grid">
+            <div class="two wide left attached column">
+                <div class="ui vertical fluid tabular menu admin-sidebar">
+                    <a class="item" data-tab="articles"> 文章 </a>
+                    <a class="item" data-tab="comments"> 评论 </a>
+                </div>
+            </div>
+            <div class="fourteen wide right attached column">
+                <div class="ui tab seamless right attached segment" data-tab="articles">
+                    <ArticleList></ArticleList>
+                </div>
+                <div class="ui tab seamless right attached segment" data-tab="comments">
+                    <Marker></Marker>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<style scoped>
+.admin-sidebar {
+    height: 100%;
+}
+</style>
 
 <script>
 export default {
@@ -58,6 +80,8 @@ export default {
         commentQuery.count().then((count) => {
             this.commentCount = count;
         });
+
+        $('.tabular.menu .item').tab();
     }
 };
 </script>
