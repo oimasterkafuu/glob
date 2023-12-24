@@ -17,7 +17,7 @@
         </h1>
     </div>
     <div class="ui segment">
-        <Marker :content="post.get('content')"></Marker>
+        <Marker :content="post.get('content')" :safe="true"></Marker>
     </div>
 </template>
 
