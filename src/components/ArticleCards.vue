@@ -23,7 +23,7 @@
             </div>
 
             <div class="description">
-                <blockquote class="ui segment article-content">
+                <blockquote class="ui very short scrolling segment">
                     <Marker :content="article.get('content')" :safe="true" :max-header="3"> </Marker>
                 </blockquote>
             </div>
@@ -37,20 +37,13 @@
                 </div>
             </div>
             <div class="description">
-                <blockquote class="ui segment article-content">
+                <blockquote class="ui very short scrolling segment">
                     <Marker></Marker>
                 </blockquote>
             </div>
         </div>
     </div>
 </template>
-
-<style scoped>
-.article-content {
-    max-height: 200px;
-    overflow: hidden;
-}
-</style>
 
 <script>
 import { RouterLink } from 'vue-router';
