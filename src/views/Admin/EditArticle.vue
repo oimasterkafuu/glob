@@ -7,14 +7,14 @@
         <a class="item" data-tab="preview">预览</a>
 
         <div class="right menu">
-            <RouterLink class="item" to="/admin/">到仪表盘</RouterLink>
-            <RouterLink class="item" :to="'/post/' + $route.params.id" id="back">回到前台</RouterLink>
+            <RouterLink class="item dangerous-back" to="/admin/">到仪表盘</RouterLink>
+            <RouterLink class="item dangerous-back" :to="'/post/' + $route.params.id">回到前台</RouterLink>
         </div>
     </div>
     <div class="ui bottom attached tab segment active" data-tab="edit">
         <div class="ui form">
             <div class="field">
-                <input type="text" id="title" name="title" placeholder="标题" v-model="title" />
+                <input type="text" id="title" name="title" placeholder="标题" v-model="title" @input="onInput" />
             </div>
             <div class="field">
                 <textarea
@@ -32,7 +32,12 @@
     <div class="ui bottom attached tab segment" data-tab="preview">
         <Marker :content="'# ' + title + '\n\n' + content" :safe="true"></Marker>
     </div>
-    <div type="submit" class="ui positive fluid button" @click="submit" id="submit"><i class="icon edit"></i>提交</div>
+    <div class="ui center aligned container">
+        <div type="submit" class="ui positive button" @click="submit" id="submit">
+            提交
+            <i class="right arrow icon"></i>
+        </div>
+    </div>
 </template>
 
 <style scoped>
@@ -68,7 +73,7 @@ export default {
                 });
                 $('#submit').removeClass('loading', 'disabled');
             });
-            $('#back').removeClass('disabled');
+            $('.dangerous-back').removeClass('disabled');
         },
         keyDownListener(e) {
             if (e.metaKey && e.key === 's') {
@@ -77,7 +82,7 @@ export default {
             }
         },
         onInput() {
-            $('#back').addClass('disabled');
+            $('.dangerous-back').addClass('disabled');
         }
     },
     mounted() {
