@@ -83,7 +83,7 @@ export default {
                     if (level <= this.maxHeader) {
                         level = this.maxHeader;
                     }
-                    return '<h' + level + '>' + text + '</h' + level + '>';
+                    return '<h' + level + ' class="ui header">' + text + '</h' + level + '>';
                 }
             };
 
