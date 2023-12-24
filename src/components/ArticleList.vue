@@ -95,7 +95,7 @@ export default {
                         const counters = new AV.Query('Counters');
                         counters.equalTo('article', article);
                         const deletingCounters = await counters.find();
-                        await Promise.all(deletingCounters.map((counter) => counter.destroy()));
+                        await AV.Object.destroyAll(deletingCounters);
                         await article.destroy();
                         location.reload();
                     }
