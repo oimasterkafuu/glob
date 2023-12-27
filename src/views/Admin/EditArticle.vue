@@ -8,7 +8,7 @@
 
         <div class="right menu">
             <RouterLink class="item dangerous-back" to="/admin/">到仪表盘</RouterLink>
-            <RouterLink class="item dangerous-back" :to="'/post/' + $route.params.id">回到前台</RouterLink>
+            <RouterLink class="item dangerous-back" :to="'/article/' + $route.params.id">回到前台</RouterLink>
         </div>
     </div>
     <div class="ui bottom attached tab segment active" data-tab="edit">

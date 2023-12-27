@@ -2,7 +2,7 @@
     <div class="ui fluid card" v-for="article in articles" :key="article.get('objectId')" v-if="articles.length > 0">
         <div class="content">
             <div class="header">
-                <RouterLink :to="'/post/' + article.get('objectId')">
+                <RouterLink :to="'/article/' + article.get('objectId')">
                     {{ article.get('title') }}
                 </RouterLink>
             </div>
@@ -81,9 +81,9 @@ export default {
         }
     },
     methods: {
-        async getViews(post) {
+        async getViews(article) {
             const counterQuery = new AV.Query('Counters');
-            counterQuery.equalTo('article', post);
+            counterQuery.equalTo('article', article);
             const counters = await counterQuery.count();
             return counters;
         }

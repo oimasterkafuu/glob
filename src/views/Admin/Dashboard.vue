@@ -31,7 +31,7 @@
 
     <div class="ui segment">
         <div class="ui top attached tabular menu">
-            <RouterLink class="item" to="/admin/post-dashboard" active-class="active">文章</RouterLink>
+            <RouterLink class="item" to="/admin/article-dashboard" active-class="active">文章</RouterLink>
             <RouterLink class="item" to="/admin/comment-dashboard" active-class="active">评论</RouterLink>
         </div>
         <div class="ui bottom attached segment">

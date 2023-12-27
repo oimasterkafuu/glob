@@ -1,14 +1,14 @@
 <template>
     <div class="ui center aligned container">
         <h1 class="ui header">
-            {{ post.get('title') }}
-            <div class="sub header" v-if="post.get('title')">
+            {{ article.get('title') }}
+            <div class="sub header" v-if="article.get('title')">
                 <i class="icon clock"></i>
-                <DateAndTime :time="post.get('createdAt')"></DateAndTime>
+                <DateAndTime :time="article.get('createdAt')"></DateAndTime>
                 &bull;
 
                 <i class="icon history"></i>
-                <DateAndTime :time="post.get('updatedAt')"></DateAndTime>
+                <DateAndTime :time="article.get('updatedAt')"></DateAndTime>
                 &bull;
 
                 <i class="icon eye"></i>
@@ -22,17 +22,17 @@
         </h1>
     </div>
     <div class="ui segment">
-        <Marker :content="post.get('content')" :safe="true"></Marker>
+        <Marker :content="article.get('content')" :safe="true"></Marker>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Post',
+    name: 'Article',
     data() {
         return {
             id: this.$route.params.id,
-            post: {
+            article: {
                 get: () => ''
             },
             views: 0,
@@ -41,15 +41,15 @@ export default {
     },
     async mounted() {
         const postQuery = new AV.Query('Articles');
-        const post = await postQuery.get(this.id);
-        this.post = post;
+        const article = await postQuery.get(this.id);
+        this.article = article;
 
         const counter = new AV.Object('Counters');
-        counter.set('article', post);
+        counter.set('article', article);
         await counter.save();
 
         const counterQuery = new AV.Query('Counters');
-        counterQuery.equalTo('article', post);
+        counterQuery.equalTo('article', article);
         const counters = await counterQuery.count();
         this.views = counters;
     }

@@ -12,9 +12,9 @@ const routes = [
         component: () => import('../views/Articles.vue')
     },
     {
-        path: '/post/:id',
-        name: 'post',
-        component: () => import('../views/Post.vue')
+        path: '/article/:id',
+        name: 'article',
+        component: () => import('../views/Article.vue')
     },
     {
         path: '/admin',
@@ -28,8 +28,8 @@ const routes = [
         },
         children: [
             {
-                path: 'post-dashboard',
-                name: 'post-dashboard',
+                path: 'article-dashboard',
+                name: 'article-dashboard',
                 component: () => import('../views/Admin/ArticleDashboard.vue')
             },
             {
