@@ -82,6 +82,7 @@ export default {
     },
     mounted() {
         const query = new AV.Query('Articles');
+        query.descending('createdAt');
         query.find().then((articles) => {
             this.articles = articles;
         });
