@@ -30,21 +30,12 @@
     </div>
 
     <div class="ui segment">
-        <div class="ui grid">
-            <div class="two wide left attached column">
-                <div class="ui vertical fluid tabular menu admin-sidebar">
-                    <a class="item" data-tab="articles"> 文章 </a>
-                    <a class="item" data-tab="comments"> 评论 </a>
-                </div>
-            </div>
-            <div class="fourteen wide right attached column">
-                <div class="ui tab seamless right attached segment" data-tab="articles">
-                    <ArticleList></ArticleList>
-                </div>
-                <div class="ui tab seamless right attached segment" data-tab="comments">
-                    <Marker></Marker>
-                </div>
-            </div>
+        <div class="ui top attached tabular menu">
+            <RouterLink class="item" to="/admin/post-dashboard" active-class="active">文章</RouterLink>
+            <RouterLink class="item" to="/admin/comment-dashboard" active-class="active">评论</RouterLink>
+        </div>
+        <div class="ui bottom attached segment">
+            <RouterView></RouterView>
         </div>
     </div>
 </template>
@@ -80,8 +71,6 @@ export default {
         commentQuery.count().then((count) => {
             this.commentCount = count;
         });
-
-        $('.tabular.menu .item').tab();
     }
 };
 </script>

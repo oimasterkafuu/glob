@@ -25,7 +25,19 @@ const routes = [
             } else {
                 return import('../views/Admin/Login.vue');
             }
-        }
+        },
+        children: [
+            {
+                path: 'post-dashboard',
+                name: 'post-dashboard',
+                component: () => import('../views/Admin/ArticleDashboard.vue')
+            },
+            {
+                path: 'comment-dashboard',
+                name: 'comment-dashboard',
+                component: () => import('../components/Marker.vue') // todo
+            }
+        ]
     },
     {
         path: '/admin/editpost/:id',
