@@ -7,9 +7,11 @@
                 <DateTime :time="article.get('createdAt')"></DateTime>
                 &bull;
 
-                <i class="icon history"></i>
-                <DateTime :time="article.get('updatedAt')"></DateTime>
-                &bull;
+                <span v-if="article.get('updatedAt') - article.get('createdAt') > 86400000">
+                    <i class="icon history"></i>
+                    <DateTime :time="article.get('updatedAt')"></DateTime>
+                    &bull;
+                </span>
 
                 <i class="icon eye"></i>
                 {{ views }}
