@@ -58,7 +58,7 @@ export default {
         },
         limit: {
             type: Number,
-            default: 10
+            default: 5
         }
     },
     data() {
@@ -67,8 +67,11 @@ export default {
         };
     },
     mounted() {
-        if (this.filterArticles && this.filterArticles.length > 0) {
+        if (this.filterArticles) {
             this.articles = this.filterArticles;
+            this.articles.forEach(async (article) => {
+                article.views = await this.getViews(article);
+            });
         } else {
             const query = new AV.Query('Articles');
             query.descending('createdAt');
