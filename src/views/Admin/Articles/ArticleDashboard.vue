@@ -14,6 +14,7 @@
         <thead>
             <tr>
                 <th class="two wide">标题</th>
+                <th class="left aligned">创建时间</th>
                 <th class="left aligned">更新时间</th>
                 <th class="two wide" colspan="2">操作</th>
             </tr>
@@ -22,7 +23,10 @@
             <tr v-for="article in articles" :key="article.get('objectId')" v-if="articles && articles.length">
                 <td>{{ article.get('title') }}</td>
                 <td class="left aligned">
-                    <DateTime :time="article.get('updatedAt')"></DateTime>
+                    <DateTime :time="article.get('createdAt')" specialFormat="LLL"></DateTime>
+                </td>
+                <td class="left aligned">
+                    <DateTime :time="article.get('updatedAt')" specialFormat="LLL"></DateTime>
                 </td>
                 <td>
                     <RouterLink :to="'/admin/editpost/' + article.get('objectId')">编辑</RouterLink>
