@@ -8,6 +8,9 @@
 
 <script>
 export default {
-    name: 'Articles'
+    name: 'Articles',
+    mounted() {
+        document.title = '文章 - oimaster';
+    }
 };
 </script>

@@ -44,6 +44,8 @@ export default {
         const article = await postQuery.get(this.id);
         this.article = article;
 
+        document.title = article.get('title') + ' - oimaster';
+
         const counter = new AV.Object('Counters');
         counter.set('article', article);
         await counter.save();

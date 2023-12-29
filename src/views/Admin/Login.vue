@@ -46,6 +46,8 @@
 export default {
     name: 'Login',
     mounted() {
+        document.title = '登录 - oimaster';
+
         $('#login-form').form({
             fields: {
                 username: {

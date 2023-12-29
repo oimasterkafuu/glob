@@ -57,6 +57,8 @@ export default {
         };
     },
     mounted() {
+        document.title = '后台 - oimaster';
+
         const articleQuery = new AV.Query('Articles');
         articleQuery.count().then((count) => {
             this.articleCount = count;

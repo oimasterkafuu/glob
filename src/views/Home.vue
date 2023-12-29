@@ -6,6 +6,9 @@
 
 <script>
 export default {
-    name: 'Home'
+    name: 'Home',
+    mounted() {
+        document.title = '首页 - oimaster';
+    }
 };
 </script>

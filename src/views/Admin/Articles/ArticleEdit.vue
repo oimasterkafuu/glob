@@ -93,6 +93,7 @@ export default {
         const query = new AV.Query('Articles');
         query.get(this.$route.params.id).then((article) => {
             this.title = article.get('title');
+            document.title = this.title + ' - 编辑文章 - oimaster';
             this.content = article.get('content');
         });
     },
