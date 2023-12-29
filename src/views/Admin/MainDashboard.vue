@@ -56,6 +56,11 @@ export default {
             commentCount: 0
         };
     },
+    created() {
+        if (this.$route.path === '/admin' || this.$route.path === '/admin/') {
+            this.$router.replace('/admin/article-dashboard');
+        }
+    },
     mounted() {
         document.title = '后台 - oimaster';
 
