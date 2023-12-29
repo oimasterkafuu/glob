@@ -1,7 +1,8 @@
 <template>
-    <div class="ui center aligned container">
-        <MarkerUrl url="/EditArticle.md" :safe="true"></MarkerUrl>
-    </div>
+    <h2 class="ui center aligned header">
+        编辑文章
+        <div class="sub header">文章不太满意的地方，都可以改改哦！</div>
+    </h2>
     <div class="ui top attached tabular menu">
         <a class="item active" data-tab="edit">编辑</a>
         <a class="item" data-tab="preview">预览</a>

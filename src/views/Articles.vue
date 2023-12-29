@@ -1,7 +1,8 @@
 <template>
-    <div class="ui center aligned container">
-        <MarkerUrl url="/Articles.md" :safe="true"></MarkerUrl>
-    </div>
+    <h2 class="ui center aligned header">
+        文章
+        <div class="sub header">从下面选择你想进入的文章。</div>
+    </h2>
     <ArticleCards></ArticleCards>
 </template>
 
