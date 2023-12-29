@@ -35,7 +35,7 @@ const routes = [
             {
                 path: 'comment-dashboard',
                 name: 'comment-dashboard',
-                component: () => import('../components/Markers/Marker.vue') // todo
+                component: () => import('../views/Admin/Comments/CommentDashboard.vue')
             }
         ]
     },
