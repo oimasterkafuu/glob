@@ -3,6 +3,10 @@
         <h1 class="ui header">
             {{ article.get('title') }}
             <div class="sub header" v-if="article.get('title')">
+                <i class="icon user"></i>
+                <RouterLink class="meta-link" to="/">oimaster</RouterLink>
+                &bull;
+
                 <i class="icon clock"></i>
                 <DateTime :time="article.get('createdAt')"></DateTime>
                 &bull;
@@ -18,7 +22,9 @@
 
                 <span v-if="user">
                     &bull;
-                    <RouterLink :to="'/admin/editpost/' + id"> <i class="icon edit"></i>编辑 </RouterLink>
+                    <RouterLink class="meta-link" :to="'/admin/editpost/' + id">
+                        <i class="icon edit"></i>编辑
+                    </RouterLink>
                 </span>
             </div>
         </h1>
@@ -27,6 +33,12 @@
         <Marker :content="article.get('content')" :safe="true"></Marker>
     </div>
 </template>
+
+<style scoped>
+.meta-link {
+    color: inherit;
+}
+</style>
 
 <script>
 export default {
