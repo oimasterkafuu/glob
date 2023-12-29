@@ -7,7 +7,7 @@ import moment from 'moment';
 import 'moment/dist/locale/zh-cn';
 
 export default {
-    name: 'DateAndTime',
+    name: 'DateTime',
     props: {
         time: {
             type: Date

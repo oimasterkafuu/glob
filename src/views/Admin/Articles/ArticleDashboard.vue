@@ -22,7 +22,7 @@
             <tr v-for="article in articles" :key="article.get('objectId')" v-if="articles && articles.length">
                 <td>{{ article.get('title') }}</td>
                 <td class="left aligned">
-                    <DateAndTime :time="article.get('updatedAt')"></DateAndTime>
+                    <DateTime :time="article.get('updatedAt')"></DateTime>
                 </td>
                 <td>
                     <RouterLink :to="'/admin/editpost/' + article.get('objectId')">编辑</RouterLink>

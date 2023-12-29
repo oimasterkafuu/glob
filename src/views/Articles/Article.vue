@@ -4,11 +4,11 @@
             {{ article.get('title') }}
             <div class="sub header" v-if="article.get('title')">
                 <i class="icon clock"></i>
-                <DateAndTime :time="article.get('createdAt')"></DateAndTime>
+                <DateTime :time="article.get('createdAt')"></DateTime>
                 &bull;
 
                 <i class="icon history"></i>
-                <DateAndTime :time="article.get('updatedAt')"></DateAndTime>
+                <DateTime :time="article.get('updatedAt')"></DateTime>
                 &bull;
 
                 <i class="icon eye"></i>

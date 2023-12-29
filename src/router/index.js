@@ -9,19 +9,19 @@ const routes = [
     {
         path: '/articles',
         name: 'articles',
-        component: () => import('../views/Articles.vue')
+        component: () => import('../views/Articles/Articles.vue')
     },
     {
         path: '/article/:id',
         name: 'article',
-        component: () => import('../views/Article.vue')
+        component: () => import('../views/Articles/Article.vue')
     },
     {
         path: '/admin',
         name: 'admin',
         component: () => {
             if (AV.User.current()) {
-                return import('../views/Admin/Dashboard.vue');
+                return import('../views/Admin/MainDashboard.vue');
             } else {
                 return import('../views/Admin/Login.vue');
             }
@@ -30,12 +30,12 @@ const routes = [
             {
                 path: 'article-dashboard',
                 name: 'article-dashboard',
-                component: () => import('../views/Admin/ArticleDashboard.vue')
+                component: () => import('../views/Admin/Articles/ArticleDashboard.vue')
             },
             {
                 path: 'comment-dashboard',
                 name: 'comment-dashboard',
-                component: () => import('../components/Marker.vue') // todo
+                component: () => import('../components/Markers/Marker.vue') // todo
             }
         ]
     },
@@ -44,7 +44,7 @@ const routes = [
         name: 'edit',
         component: () => {
             if (AV.User.current()) {
-                return import('../views/Admin/EditArticle.vue');
+                return import('../views/Admin/Articles/ArticleEdit.vue');
             } else {
                 return import('../views/Admin/Login.vue');
             }
