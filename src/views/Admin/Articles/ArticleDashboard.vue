@@ -77,7 +77,7 @@
 
 <script>
 export default {
-    name: 'ArticleList',
+    name: 'ArticleDashboard',
     data() {
         return {
             user: AV.User.current(),

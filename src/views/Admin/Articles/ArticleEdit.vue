@@ -49,7 +49,7 @@
 
 <script>
 export default {
-    name: 'EditArticle',
+    name: 'ArticleEdit',
     data() {
         return {
             title: '',

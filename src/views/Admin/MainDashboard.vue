@@ -48,7 +48,7 @@
 
 <script>
 export default {
-    name: 'Dashboard',
+    name: 'MainDashboard',
     data() {
         return {
             articleCount: 0,
