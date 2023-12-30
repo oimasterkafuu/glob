@@ -52,7 +52,7 @@ const routes = [
             {
                 path: 'shortlink-dashboard',
                 name: 'shortlink-dashboard',
-                component: () => import('../views/Admin/Shortlinks/ShortlinkDashboard.vue')
+                component: () => import('../views/Admin/ShortLinks/ShortLinkDashboard.vue')
             }
         ]
     },
