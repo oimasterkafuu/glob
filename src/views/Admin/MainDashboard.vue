@@ -21,9 +21,9 @@
             <div class="column">
                 <div class="ui statistic">
                     <div class="value">
-                        {{ commentCount }}
+                        {{ shortLinkCount }}
                     </div>
-                    <div class="label">评论数量</div>
+                    <div class="label">短链数量</div>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
     <div class="ui segment">
         <div class="ui top attached tabular menu">
             <RouterLink class="item" to="/admin/article-dashboard" active-class="active">文章</RouterLink>
-            <RouterLink class="item" to="/admin/comment-dashboard" active-class="active">评论</RouterLink>
+            <RouterLink class="item" to="/admin/shortlink-dashboard" active-class="active">短链</RouterLink>
         </div>
         <div class="ui bottom attached segment">
             <RouterView></RouterView>
@@ -53,7 +53,7 @@ export default {
         return {
             articleCount: 0,
             viewCount: 0,
-            commentCount: 0
+            shortLinkCount: 0
         };
     },
     created() {
@@ -74,9 +74,9 @@ export default {
             this.viewCount = count;
         });
 
-        const commentQuery = new AV.Query('Comments');
-        commentQuery.count().then((count) => {
-            this.commentCount = count;
+        const shortLinkQuery = new AV.Query('ShortLinks');
+        shortLinkQuery.count().then((count) => {
+            this.shortLinkCount = count;
         });
     }
 };

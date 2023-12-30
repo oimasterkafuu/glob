@@ -1,6 +1,6 @@
 {
     "name": "glob",
-    "version": "0.1.7",
+    "version": "0.2.0",
     "description": "Get lit, oimasterkafuu's blog",
     "main": "index.js",
     "repository": "https://github.com/oimasterkafuu/glob.git",

@@ -17,6 +17,23 @@ const routes = [
         component: () => import('../views/Articles/Article.vue')
     },
     {
+        path: '/s/:shortlink',
+        name: 'shortlink',
+        beforeEnter: (to, from, next) => {
+            const articleQuery = new AV.Query('ShortLinks');
+            articleQuery.equalTo('name', to.params.shortlink);
+            articleQuery.select([]);
+            articleQuery.first().then((article) => {
+                if (article) {
+                    next(`/article/${article.get('article').get('objectId')}`);
+                } else {
+                    next('/');
+                }
+            });
+        },
+        component: () => null
+    },
+    {
         path: '/admin',
         name: 'admin',
         component: () => {
@@ -33,9 +50,9 @@ const routes = [
                 component: () => import('../views/Admin/Articles/ArticleDashboard.vue')
             },
             {
-                path: 'comment-dashboard',
-                name: 'comment-dashboard',
-                component: () => import('../views/Admin/Comments/CommentDashboard.vue')
+                path: 'shortlink-dashboard',
+                name: 'shortlink-dashboard',
+                component: () => import('../views/Admin/Shortlinks/ShortlinkDashboard.vue')
             }
         ]
     },
