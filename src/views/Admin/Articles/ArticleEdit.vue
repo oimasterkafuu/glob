@@ -8,7 +8,7 @@
         <a class="item" data-tab="preview">预览</a>
 
         <div class="right menu">
-            <RouterLink class="item dangerous-back" to="/admin/">到仪表盘</RouterLink>
+            <RouterLink class="item dangerous-back" to="/admin/article-dashboard">到仪表盘</RouterLink>
             <RouterLink class="item dangerous-back" :to="'/article/' + $route.params.id">回到前台</RouterLink>
         </div>
     </div>
