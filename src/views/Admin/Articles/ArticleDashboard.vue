@@ -102,6 +102,13 @@ export default {
                         counters.select([]);
                         const deletingCounters = await counters.find();
                         await AV.Object.destroyAll(deletingCounters);
+
+                        const shortLinks = new AV.Query('ShortLinks');
+                        shortLinks.equalTo('article', article);
+                        shortLinks.select([]);
+                        const deletingShortLinks = await shortLinks.find();
+                        await AV.Object.destroyAll(deletingShortLinks);
+
                         await article.destroy();
                         location.reload();
                     }
