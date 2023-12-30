@@ -1,5 +1,5 @@
 <template>
-    {{ formattedTime }}
+    <span v-text="formattedTime" :title="originalTime"></span>
 </template>
 
 <script>
@@ -25,6 +25,12 @@ export default {
                 return moment(this.time).format(this.specialFormat);
             }
             return moment(this.time).fromNow();
+        },
+        originalTime() {
+            if (!this.time || this.specialFormat === 'LLL') {
+                return '';
+            }
+            return moment(this.time).format('LLL');
         }
     }
 };
