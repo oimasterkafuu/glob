@@ -97,7 +97,6 @@ export default {
             $('#delete-modal')
                 .modal({
                     onApprove: async () => {
-                        $('#delete-modal').addClass(['loading', 'disabled']);
                         const counters = new AV.Query('Counters');
                         counters.equalTo('article', article);
                         counters.select([]);
