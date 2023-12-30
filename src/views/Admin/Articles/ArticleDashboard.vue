@@ -36,7 +36,7 @@
                 </td>
             </tr>
             <tr v-for="i in 5" :key="i" v-else>
-                <td v-for="j in 3" :key="j">
+                <td v-for="j in 4" :key="j">
                     <div class="ui placeholder">
                         <div class="header">
                             <div class="line"></div>
