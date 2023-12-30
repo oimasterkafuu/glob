@@ -72,6 +72,7 @@ export default {
                     showProgress: 'top',
                     duration: 2000
                 });
+                document.title = this.title + ' - 编辑文章 - oimaster';
                 $('#submit').removeClass('loading', 'disabled');
             });
             $('.dangerous-back').removeClass('disabled');
