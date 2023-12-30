@@ -87,6 +87,7 @@ export default {
     mounted() {
         const query = new AV.Query('Articles');
         query.descending('createdAt');
+        query.select('title');
         query.find().then((articles) => {
             this.articles = articles;
         });
@@ -99,6 +100,7 @@ export default {
                         $('#delete-modal').addClass(['loading', 'disabled']);
                         const counters = new AV.Query('Counters');
                         counters.equalTo('article', article);
+                        counters.select([]);
                         const deletingCounters = await counters.find();
                         await AV.Object.destroyAll(deletingCounters);
                         await article.destroy();
