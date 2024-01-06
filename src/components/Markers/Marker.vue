@@ -91,6 +91,12 @@ export default {
             var element = $('<div/>');
             element.html(marked.parse(this.content));
 
+            twemoji.parse(element[0], {
+                folder: 'svg',
+                ext: '.svg',
+                className: 'ui image emoji'
+            });
+
             renderMathInElement($(element)[0], {
                 delimiters: [
                     { left: '$$', right: '$$', display: true },
@@ -103,3 +109,10 @@ export default {
     }
 };
 </script>
+
+<style>
+.emoji {
+    display: inline-block !important;
+    width: 1.2em !important;
+}
+</style>
