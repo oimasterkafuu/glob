@@ -3,13 +3,13 @@
         <div class="ui container">
             <span class="mobile-hide">
                 版本
-                <a :href="'https://github.com/oimasterkafuu/glob/releases/tag/v' + appVersion"> v{{ appVersion }}</a>
-                ，使用 <a href="https://github.com/oimasterkafuu/glob/blob/main/LICENSE">MIT</a> 协议开源 ，构建于
-                <a> {{ appBuildTime }}</a>
+                <a :href="'https://github.com/oimasterkafuu/glob/releases/tag/v' + appVersion"> v{{ appVersion }}</a
+                >，构建于 <a>{{ appBuildTime }}</a
+                >，<a href="https://icp.gov.moe/?keyword=20233423">萌ICP备20233423号</a>
             </span>
 
             <span class="right">
-                © 2023
+                © 2023-2024
                 <a href="https://github.com/oimasterkafuu" target="_blank" rel="noopener noreferrer"
                     >oimasterkafuu</a
                 ></span
